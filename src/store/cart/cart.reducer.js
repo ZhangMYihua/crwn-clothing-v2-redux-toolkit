@@ -10,26 +10,17 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState: CART_INITIAL_STATE,
     reducers: {
-        setCartItems(state, action) {
-            state.cartItems = action.payload;
-        },
         setIsCartOpen(state, action) {
             state.isCartOpen = action.payload;
         },
         addItemToCart(state, action) {
-            const newCartItems = addCartItem(state.cartItems, action.payload);
-            state.cartItems = newCartItems;
+            state.cartItems = addCartItem(state.cartItems, action.payload);
         },
         removeItemFromCart(state, action) {
-            const newCartItems = removeCartItem(
-                state.cartItems,
-                action.payload
-            );
-            state.cartItems = newCartItems;
+            state.cartItems = removeCartItem(state.cartItems, action.payload);
         },
         clearItemFromCart(state, action) {
-            const newCartItems = clearCartItem(state.cartItems, action.payload);
-            state.cartItems = newCartItems;
+            state.cartItems = clearCartItem(state.cartItems, action.payload);
         },
     },
 });

@@ -17,7 +17,7 @@ const Shop = () => {
     };
 
     getCategoriesMap();
-  }, []);
+  },);
 
   return (
     <Routes>

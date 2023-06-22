@@ -8,6 +8,12 @@ You can see the fork button in the top right corner of every GitHub project; cli
 
 After forking the project, simply clone it the way you would from the new forked project in your own GitHub repository and you can commit and push to it freely!
 
+To clone the project using CLI, simply type:
+
+```
+git clone git@github.com:<Your Name>/crwn-clothing-v2-redux-toolkit.git
+```
+
 # After you fork and clone:
 
 ## Install dependencies

@@ -1,34 +1,30 @@
-import { compose, createStore, applyMiddleware } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import logger from 'redux-logger';
-
+import {configureStore,getDefaultMiddleware,serializableCheck} from '@reduxjs/toolkit';
 import { rootReducer } from './root-reducer';
+import logger from 'redux-logger';
 
 const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
   Boolean
 );
 
-const composeEnhancer =
-  (process.env.NODE_ENV !== 'production' &&
-    window &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose;
+export const store=configureStore({
+  reducer:rootReducer,
+  middlaware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(middleWares),
+});
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  blacklist: ['user'],
-};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+// 1- thunk middleware
 
-const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares));
+// const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
+//   Boolean
+// );
 
-export const store = createStore(
-  persistedReducer,
-  undefined,
-  composedEnhancers
-);
+// 2- serilestirelemeyen middleware
 
-export const persistor = persistStore(store);
+// export const store=configureStore({
+//   reducer:rootReducer,
+//   middlaware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(middleWares),
+// });
+
+// 3- immutable middleware 
+
+

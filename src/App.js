@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -16,6 +16,9 @@ import { setCurrentUser } from './store/user/user.reducer';
 
 const App = () => {
   const dispatch = useDispatch();
+  let test = useSelector((state) => state.user.test);
+
+  test.a = 2;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {

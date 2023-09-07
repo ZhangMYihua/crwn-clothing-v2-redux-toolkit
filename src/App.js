@@ -22,7 +22,11 @@ const App = () => {
       if (user) {
         createUserDocumentFromAuth(user);
       }
-      console.log(setCurrentUser(user));
+
+      const pickedUser = user && (({accessToken, email}) => ({accessToken, email}))(user); //this is to just cherry pick a certain feild in the return object from firebase, to avoid that non-serializable error
+        
+
+      console.log(setCurrentUser(pickedUser));
       dispatch(setCurrentUser(user));
     });
 

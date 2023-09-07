@@ -1,14 +1,11 @@
-{
-  "name": "flight23",
-  "version": "0.1.0",
+  {
+  "name": "flight23_project",
+  "packageManager": "yarn@3.6.3",
   "private": true,
   "dependencies": {
-    "@stripe/react-stripe-js": "^2.1.2",
-    "@stripe/stripe-js": "^2.1.2",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "13.5.0",
-    "dotenv": "^16.3.1",
     "firebase": "9.6.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -20,7 +17,6 @@
     "redux-persist": "6.0.0",
     "reselect": "4.1.5",
     "sass": "1.49.7",
-    "stripe": "^13.5.0",
     "styled-components": "5.3.3",
     "web-vitals": "2.1.4"
   },

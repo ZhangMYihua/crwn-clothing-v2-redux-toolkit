@@ -7,7 +7,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
+  onAuthStateChanged
 } from 'firebase/auth';
 import {
   getFirestore,
@@ -17,16 +17,16 @@ import {
   collection,
   writeBatch,
   query,
-  getDocs,
+  getDocs
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
-  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
-  projectId: 'crwn-clothing-db-98d4d',
-  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
-  messagingSenderId: '626766232035',
-  appId: '1:626766232035:web:506621582dab103a4d08d6',
+  apiKey: 'AIzaSyAL0g7nZ9zVf7T8tAyNhwdi5mbpB8xG0ds',
+  authDomain: 'flight23-db-39954.firebaseapp.com',
+  projectId: 'flight23-db-39954',
+  storageBucket: 'flight23-db-39954.appspot.com',
+  messagingSenderId: '527318211797',
+  appId: '1:527318211797:web:10e598bfd141a878d7165c'
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -34,7 +34,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 const googleProvider = new GoogleAuthProvider();
 
 googleProvider.setCustomParameters({
-  prompt: 'select_account',
+  prompt: 'select_account'
 });
 
 export const auth = getAuth();
@@ -89,7 +89,7 @@ export const createUserDocumentFromAuth = async (
         displayName,
         email,
         createdAt,
-        ...additionalInformation,
+        ...additionalInformation
       });
     } catch (error) {
       console.log('error creating the user', error.message);

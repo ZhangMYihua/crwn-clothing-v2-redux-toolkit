@@ -7,8 +7,13 @@ import { PaymentFormContainer, FormContainer } from './payment-form-styles';
 const PaymentForm = () => {
   const stripe = useStripe();
   const elements = useElements();
+
   const paymentHandler = async (e) => {
     e.preventDefault();
+
+    if (!stripe || !elements) {
+      return;
+    }
   };
 
   return (
